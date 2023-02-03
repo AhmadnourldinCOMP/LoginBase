@@ -32,7 +32,7 @@
             </div>
             <div class="mb-3 form-check">
                 <select class="form-select" id="Choice" name="choice" required>
-                    <option value="employee">Employee</option>
+                    <option value="empolyee">Employee</option>
                     <option value="student">Student</option>
                     <option value="instructor">Instructor</option>
                 </select>
@@ -53,10 +53,9 @@
                         
                     }   
                     if (strpos($fullUrl, "login=emailorpassword") == true){
-                        echo "<script>alert('The Email or the password is incorrect !')</script>";
+                        echo "<script>alert('The Email Or The Password Or The Choice Is Incorrect !')</script>";
                     }   
             ?>
-
     </div>
     <script src="bootstrap.js"></script>
 </body>

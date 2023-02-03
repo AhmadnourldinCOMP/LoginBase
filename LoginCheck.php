@@ -14,7 +14,7 @@
                 header("Location: index.php?login=validateEmail");
                 exit();
             }else{
-                $sql = "SELECT * FROM $choice WHERE email = '$email' && password = '$password';";
+                $sql = "SELECT * FROM ".$choice." WHERE email = '".$email."' && password = '".$password."';";
                 $result = mysqli_query($conn, $sql);
                 $resultNumber = mysqli_num_rows($result);
                 if($resultNumber > 0){
@@ -23,7 +23,7 @@
                         $_SESSION['username'] = $row['name'];
                         $_SESSION['id'] = $row['id'];
                     }
-                    header("Location: student.php?");
+                    header("Location: ".$choice.".php");
                 }else{
                     header("Location: index.php?login=emailorpassword");
                 }

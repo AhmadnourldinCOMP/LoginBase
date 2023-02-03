@@ -22,6 +22,7 @@
         <thead>
     <tr>
       <th scope="col">Name</th>
+      <th scope="col">course</th>
       <th scope="col">Status</th>
     </tr>
   </thead>
@@ -31,10 +32,15 @@
         $result = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_assoc($result)){
             echo "<tr>";
-            echo "<th>".$row['name']."</th>";
-            $sql = "SELECT * FROM course WHERE instructor_id = ".$row['id'] ." && student_id = ".$_SESSION['id'].";";
-            $result = mysqli_query($conn, $sql);
-            $resultNum = mysqli_num_rows($result);
+            echo "<th>";
+            echo $row['name'];
+            echo "</th>";
+            echo "<th>";
+            echo $row['dept_name'];
+            echo "</th>";
+            $Sql = 'SELECT * FROM course WHERE instructor_id = '.$row['id'].'  && student_id = '.$_SESSION['id'].' ;';
+            $Result = mysqli_query($conn, $Sql);
+            $resultNum = mysqli_num_rows($Result);
             if($resultNum > 0){
                 echo "<th><buttton class='btn btn-danger'><a class=ButtonText href='instractorCheck.php?stid=".$_SESSION['id']."&inid=".$row['id']."&status=out'>Out</a></button></th>";
             }else{
