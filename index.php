@@ -1,4 +1,12 @@
-<?php include_once "DatabaseConnection.php";?>
+<?php 
+    include_once "DatabaseConnection.php";
+    session_start();
+    if(isset($_POST['Logout'])){
+        session_destroy();
+        unset($_SESSION['username']);
+        unset($_SESSION['id']);
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">

@@ -20,3 +20,19 @@ body{
     text-align: center;
     margin: 2rem 0rem;
 }
+.Student_main{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    margin: 3rem 0rem;
+}
+.Student_main h1{
+    text-align: center;
+    margin: 3rem 0rem;
+}
+.Student_main table{
+    width:40%;
+}
+.Logout{
+    margin: 0.2rem 0rem;
+}

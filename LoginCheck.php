@@ -23,6 +23,7 @@
                         $_SESSION['username'] = $row['name'];
                         $_SESSION['id'] = $row['id'];
                     }
+                    header("Location: student.php?");
                 }else{
                     header("Location: index.php?login=emailorpassword");
                 }
