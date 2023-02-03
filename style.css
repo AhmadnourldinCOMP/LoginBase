@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.Logincard{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    margin-top: 3rem;
+}
+.Logincard form{
+    width: 40% !important;
+}
+.Logincard form h1{
+    font-size: 3rem;
+    text-align: center;
+    margin: 2rem 0rem;
+}
