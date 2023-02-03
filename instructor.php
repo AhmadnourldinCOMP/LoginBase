@@ -18,9 +18,9 @@
             <button class="btn btn-danger" type="submit" name="Logout">Logout</button>
         </form>
         <h1>Welcome: <?php echo $_SESSION['username'];?></h1>
-        <!--<form action="employeeAdd.php" method="POST" class="Logout">
+        <form action="instructorAdd.php" method="POST" class="Logout">
             <button class="btn btn-info" type="submit" name="add">ADD</button>
-        </form> -->
+        </form> 
         <table class="table table-bordered">
             <thead>
                 <tr>
