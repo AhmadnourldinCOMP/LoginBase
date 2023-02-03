@@ -43,3 +43,16 @@ body{
 .ButtonText:hover{
     color: black;
 }
+.employee_main{
+    width: 100%;
+    display: grid; 
+    place-items: center;
+}
+.employee_main form{
+    width: 60% !important;
+    margin: 2rem 0rem;
+    text-align: center;
+}
+.employee_main h1{
+    margin-bottom: 2rem;
+}

@@ -1,6 +1,5 @@
 <?php 
     include_once "DatabaseConnection.php";
-    //stid=1&inid=1&status=in
     $StudentId = $_GET["stid"];
     $InstructorId = $_GET["inid"];
 
