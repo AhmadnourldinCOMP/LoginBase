@@ -22,14 +22,27 @@
         <thead>
     <tr>
       <th scope="col">Name</th>
-      <th scope="col">Joinning</th>
+      <th scope="col">Status</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-    </tr>
+    <?php
+        $sql = "SELECT * FROM instructor;";
+        $result = mysqli_query($conn, $sql);
+        while ($row = mysqli_fetch_assoc($result)){
+            echo "<tr>";
+            echo "<th>".$row['name']."</th>";
+            $sql = "SELECT * FROM course WHERE instructor_id = ".$row['id'] ." && student_id = ".$_SESSION['id'].";";
+            $result = mysqli_query($conn, $sql);
+            $resultNum = mysqli_num_rows($result);
+            if($resultNum > 0){
+                echo "<th><buttton class='btn btn-danger'><a class=ButtonText href='instractorCheck.php?stid=".$_SESSION['id']."&inid=".$row['id']."&status=out'>Out</a></button></th>";
+            }else{
+                echo "<th><buttton class='btn btn-success'><a class=ButtonText href='instractorCheck.php?stid=".$_SESSION['id']."&inid=".$row['id']."&status=in'>In</a></button></th>";
+            } 
+            echo "</tr>";
+        }
+    ?>
   </tbody>
         </table>
     </div>
