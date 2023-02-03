@@ -1,3 +1,5 @@
+<?php include_once "DatabaseConnection.php";?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,25 +12,43 @@
 </head>
 <body>
     <div class="Logincard">
-        <form>
+        <form method="POST" action="LoginCheck.php">
             <h1>Login</h1>
             <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" required>
+                <input type="email" class="form-control" id="email" name="email" required>
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" required>
+                <input type="password" class="form-control" id="password" name="password" required>
             </div>
             <div class="mb-3 form-check">
-                <select class="form-select" id="inputGroupSelect01" required>
-                    <option value="1">Employee</option>
-                    <option value="2">Student</option>
-                    <option value="3">Instructor</option>
+                <select class="form-select" id="Choice" name="choice" required>
+                    <option value="employee">Employee</option>
+                    <option value="student">Student</option>
+                    <option value="instructor">Instructor</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
         </form>
+
+        <?php
+                $fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+                    if (strpos($fullUrl, "login=empty") == true){
+                        echo "<script>alert('You Did Not Fill All The Fields !')</script>";
+                    }   
+                    if (strpos($fullUrl, "login=validateEmail") == true){
+                        echo "<script>alert('You Used An Invalid e-mail !')</script>";
+                    }   
+                    if (strpos($fullUrl, "login=successfull") == true){
+                        
+                    }   
+                    if (strpos($fullUrl, "login=emailorpassword") == true){
+                        echo "<script>alert('The Email or the password is incorrect !')</script>";
+                    }   
+            ?>
+
     </div>
     <script src="bootstrap.js"></script>
 </body>
