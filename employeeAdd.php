@@ -17,44 +17,44 @@
         <form method="POST" action="#">
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" name="name" value="<?php echo $_GET['name'];?>" required>
+                <input type="text" class="form-control" id="name" name="name" required>
             </div>
             <div class="mb-3">
                 <label for="salary" class="form-label">Salary</label>
-                <input type="number" class="form-control" id="salary" name="salary" value="<?php echo $_GET['salary'];?>" required>
+                <input type="number" class="form-control" id="salary" name="salary" required>
             </div>
             <div class="mb-3">
                 <label for="dept_name" class="form-label">Course</label>
-                <input type="text" class="form-control" id="dept_name" name="dept_name" value="<?php echo $_GET['dept_name'];?>" required>
+                <input type="text" class="form-control" id="dept_name" name="dept_name" required>
             </div>
             <div class="mb-3">
                 <label for="phone" class="form-label">Phone</label>
-                <input type="text" class="form-control" id="phone" name="phone" value="<?php echo $_GET['phone'];?>" required>
+                <input type="text" class="form-control" id="phone" name="phone" required>
             </div>
             <div class="mb-3">
                 <label for="start_date" class="form-label">Start Date</label>
-                <input type="text" class="form-control" id="start_date" name="start_date" value="<?php echo $_GET['start_date'];?>" required>
+                <input type="text" class="form-control" id="start_date" name="start_date" required>
             </div>
             <div class="mb-3">
                 <label for="address" class="form-label">address</label>
-                <input type="text" class="form-control" id="address" name="address" value="<?php echo $_GET['address'];?>" required>
+                <input type="text" class="form-control" id="address" name="address" required>
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" value="<?php echo $_GET['email'];?>" required>
+                <input type="email" class="form-control" id="email" name="email" required>
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password" value="<?php echo $_GET['password'];?>" required>
+                <input type="password" class="form-control" id="password" name="password" required>
             </div>
             <button type="submit" name="submitEdit" class="btn btn-primary">Submit</button>
         </form>
     </div>
     <?php
         if(isset($_POST['submitEdit'])){
-            $sql = "UPDATE instructor set name='".$_POST['name']."', salary=".$_POST['salary'].", dept_name='".$_POST['dept_name']."', start_date='".$_POST['start_date']."' ,address='".$_POST['address']."', email='".$_POST['email']."', password='".$_POST['password']."' , phone='".$_POST['phone']."';";
+            $sql = "INSERT INTO instructor VALUES(null,'".$_POST['name']."', ".$_POST['salary'].", '".$_POST['dept_name']."','".$_POST['start_date']."' ,'".$_POST['phone']."', '".$_POST['email']."', '".$_POST['address']."' , '".$_POST['password']."');";
             $result = mysqli_query($conn, $sql);
-            header("Location: employee.php");
+            header("Location: employee.php?i=i");
         }
     ?>
     <script src="bootstrap.js"></script>

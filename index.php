@@ -32,7 +32,7 @@
             </div>
             <div class="mb-3 form-check">
                 <select class="form-select" id="Choice" name="choice" required>
-                    <option value="empolyee">Employee</option>
+                    <option value="employee">Employee</option>
                     <option value="student">Student</option>
                     <option value="instructor">Instructor</option>
                 </select>

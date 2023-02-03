@@ -18,6 +18,9 @@
             <button class="btn btn-danger" type="submit" name="Logout">Logout</button>
         </form>
         <h1>Welcome: <?php echo $_SESSION['username'];?></h1>
+        <form action="employeeAdd.php" method="POST" class="Logout">
+            <button class="btn btn-info" type="submit" name="add">ADD</button>
+        </form>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -47,8 +50,12 @@
                         echo "<th>".$row["address"]."</th>";
                         echo "<th>".$row["password"]."</th>";
                         echo "<th>
-                        <button class='btn btn-info'><a class='ButtonText' href='employeeEdit.php?id=".$row["id"]."'>Edit</a></button>
-                        <button class='btn btn-danger'><a class='ButtonText' href='employeeDelete.php?id=".$row["id"]."'>Delete</a></button>
+                        <button class='btn btn-info'><a class='ButtonText' 
+                        href='employeeEdit.php?id=".$row["id"]."&start_date=".$row['start_date']."&name=".$row['name']."&salary=".$row['salary']."&phone=".$row['phone']."&email=".$row['email']."&address=".$row['address']."&password=".$row['password']."&dept_name=".$row['dept_name']."'
+                        >Edit</a></button>
+                        <button class='btn btn-danger'><a class='ButtonText' 
+                        href='employeeDelete.php?id=".$row["id"]."'
+                        >Delete</a></button>
                         </th>";
                         echo "</tr>";
                     }
